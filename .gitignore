@@ -1,14 +1,16 @@
+# Eclipse
+.classpath
+.project
+.settings/
 
-alias lab='ssh ahmet@dmlab.cs.gsu.edu'
-m.xml.tag
-pom.xml.releaseBackup
-pom.xml.versionsBackup
-pom.xml.next
-release.properties
-dependency-reduced-pom.xml
-buildNumber.properties
-.mvn/timing.properties
+# Intellij
+.idea/
+*.iml
+*.iws
 
-# Avoid ignoring Maven wrapper jar file (.jar files are usually ignored)
-!/.mvn/wrapper/maven-wrapper.jar
-alias db='psql -U postgres -h dmlab.cs.gsu.edu -p5432'
+# Mac
+.DS_Store
+
+# Maven
+log/
+target/
