@@ -1,6 +1,7 @@
 package service;
 
 import database.ImageDBConnectionManager;
+import edu.gsu.dmlab.datatypes.Waveband;
 import org.joda.time.Interval;
 import util.ImageWriterThreadPoolExecutor;
 
@@ -11,11 +12,11 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 /**
- * Created by ahmetkucuk on 6/8/17.
+ * Created by ahmetkucuk on 6/8/17. Modified by SunithaBasodi on 10/28/2017.
  */
 public class ImageQueryService {
 
-    public static final int[] WAVELENGTHS = new int[]{94, 131, 171, 193, 211, 304, 335, 1600, 1700};
+    //public static final int[] WAVELENGTHS = new int[]{94, 131, 171, 193, 211, 304, 335, 1600, 1700};
     public static final ImageDBConnectionManager imageDBConnectionManager = new ImageDBConnectionManager();
     ImageWriterThreadPoolExecutor executor = new ImageWriterThreadPoolExecutor();
 
@@ -23,7 +24,8 @@ public class ImageQueryService {
 
         boolean isSucceessful = true;
         try {
-            for (int w :WAVELENGTHS) {
+            //for (int w :WAVELENGTHS) {
+            for (Waveband w :Waveband.values()) {
                 BufferedImage image = imageDBConnectionManager.getImageDB().getFirstFullImage(interval, w);
                 if(image == null) {
                     isSucceessful = false;

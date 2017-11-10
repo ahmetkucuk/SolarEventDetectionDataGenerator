@@ -8,6 +8,7 @@
     <artifactId>com.ahmetkucuk.solar.eventdetection.datagenerator</artifactId>
     <version>1.0-SNAPSHOT</version>
     <build>
+        <sourceDirectory>src</sourceDirectory>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -25,6 +26,8 @@
                             <mainClass>DataGenerator</mainClass>
                         </manifest>
                     </archive>
+                    <appendAssemblyId>false</appendAssemblyId>
+                    <finalName>dataGenerator</finalName>
                     <descriptorRefs>
                         <descriptorRef>jar-with-dependencies</descriptorRef>
                     </descriptorRefs>

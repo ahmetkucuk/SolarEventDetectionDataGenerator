@@ -9,7 +9,7 @@ import edu.gsu.dmlab.databases.interfaces.IImageDBCreator;
 import edu.gsu.dmlab.databases.*;
 
 /**
- * Created by ahmetkucuk on 6/6/17.
+ * Created by ahmetkucuk on 6/6/17. Modified by SunithaBasodi on 10/28/2017.
  */
 public class ImageDBConnectionManager {
     DataSource imageDBPoolSourc;
@@ -49,11 +49,10 @@ public class ImageDBConnectionManager {
         dbPoolSourc.setPassword("r3moteUser");
         dbPoolSourc.setValidationQuery("Select 1;");
         dbPoolSourc.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dbPoolSourc.setUrl("jdbc:mysql://dmlab.cs.gsu.edu:3306/image_db");
 
+        dbPoolSourc.setUrl(DBPrefs.MYSQL_URL);
 
         return dbPoolSourc;
     }
 
 }
-
